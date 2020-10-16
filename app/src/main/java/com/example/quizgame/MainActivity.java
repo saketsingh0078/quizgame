@@ -97,7 +97,13 @@ public class MainActivity extends AppCompatActivity {
             checkAllQuestions();
             if (correctAnswers == 0) {
                 Toast.makeText(MainActivity.this, "POOR PLAYED SCORED = 0", Toast.LENGTH_SHORT).show();
-            } else {
+            }  else if(correctAnswers <=3) {
+                Toast.makeText(MainActivity.this, "Correct Answers: " + correctAnswers + "/5" + "GOOD PLAYED",
+                        Toast.LENGTH_LONG).show();
+                resetCounterCorrectAnswers();
+            }else if(correctAnswers ==5){
+                Toast.makeText(MainActivity.this, "Correct Answers: " + correctAnswers + "/5" + "EXCELLENT PLAYED",
+            }else {
                 Toast.makeText(MainActivity.this, "Correct Answers: " + correctAnswers + "/5",
                         Toast.LENGTH_LONG).show();
                 resetCounterCorrectAnswers();
